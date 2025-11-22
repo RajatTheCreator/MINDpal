@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINDpal - Mental Wellness Bot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo-icon">S</div>
+                <div>
+                    <h1 id="appTitle" data-key="appTitle">MINDpal</h1>
+                    <p id="appSubtitle" data-key="appSubtitle">You're not alone. Talk, learn, heal.</p>
+                </div>
+            </div>
+            
+            <div class="header-controls">
+                <select class="lang-select" id="lang-select">
+                    <option value="en">English</option>
+                    <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                    <option value="hi">हिन्दी (Hindi)</option>
+                </select>
+                <button class="appointments-btn" id="appointments-btn" data-key="appointmentsBtn">Appointments</button>
+            </div>
+        </header>
+
+        <div class="main-body">
+            <aside class="sidebar">
+                <ul class="menu-list">
+                    <li><a href="#" class="menu-link active" data-target="chatbot" id="menu-chatbot" data-key="menuChatbot"><i class="fa-regular fa-comment-dots"></i> Chatbot</a></li>
+                    <li><a href="#" class="menu-link" data-target="music" id="menu-music" data-key="menuMusic"><i class="fa-solid fa-headphones"></i> Music</a></li>
+                    <li><a href="#" class="menu-link" data-target="tasks" id="menu-tasks" data-key="menuTasks"><i class="fa-solid fa-person-praying"></i> Mind Tasks</a></li>
+                    <li><a href="#" class="menu-link" data-target="trusted" id="menu-trusted" data-key="menuTrusted"><i class="fa-solid fa-user-group"></i> Talk with Trusted People</a></li>
+                </ul>
+
+                <div class="counselling-services">
+    <h3 id="counselingTitle">Counselling Services</h3>
+    <input type="text" id="search-bar" class="search-bar" placeholder="Search by name or specialty">
+    <div class="counselor-list">
+        
+        <div class="counselor-card">
+            <div>
+                <h4>Mr. Arjun Kumar</h4>
+                <p>Stress & Anxiety</p>
+            </div>
+            <div class="booking-action">
+                <button class="book-btn" onclick="handleBookClick('Mr. Arjun Kumar')">Book</button>
+            </div>
+        </div>
+        
+        <div class="counselor-card">
+            <div>
+                <h4>Ms. Kavya Sharma</h4>
+                <p>Career & Relationships</p>
+            </div>
+            <div class="booking-action">
+                <button class="book-btn" onclick="handleBookClick('Ms. Kavya Sharma')">Book</button>
+            </div>
+        </div>
+
+        <div class="counselor-card">
+            <div>
+                <h4>Dr. Priya Singh</h4>
+                <p>Grief & Trauma</p>
+            </div>
+            <div class="booking-action">
+                <button class="book-btn" onclick="handleBookClick('Dr. Priya Singh')">Book</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+            </aside>
+
+            <main class="main-content" id="dynamic-content">
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

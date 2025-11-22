@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* Added height: 100% to ensure container fills the screen vertically */
+    height: 100%; 
+}
+
+/* Header Styles */
+.header {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo-area { display: flex; align-items: center; gap: 15px; }
+.logo-icon {
+    width: 40px; height: 40px;
+    background-color: #fceabb; color: #d4a017;
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    font-weight: bold; font-size: 20px;
+}
+.header h1 { margin: 0; font-size: 24px; color: #333; }
+.header p { margin: 5px 0 0; color: #888; font-size: 14px; }
+
+.header-controls { display: flex; gap: 10px; align-items: center; }
+.appointments-btn {
+    background-color: #4a90e2; color: white;
+    border: none; padding: 10px 20px;
+    border-radius: 8px; cursor: pointer; font-weight: 500;
+}
+
+/* Main Body Layout */
+.main-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden; /* Ensures the main body respects the container size */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 300px;
+    background-color: #fff;
+    border-right: 1px solid #f0f0f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow sidebar to scroll if content is long */
+}
+
+.menu-list { list-style: none; padding: 0; margin: 0 0 30px 0; }
+.menu-list li { margin-bottom: 10px; }
+.menu-link {
+    text-decoration: none; color: #555;
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 15px; border-radius: 10px;
+    transition: background 0.2s;
+    font-weight: 500;
+}
+.menu-link i { width: 20px; text-align: center; }
+.menu-link:hover, .menu-link.active {
+    background-color: #eef6fc; color: #4a90e2;
+}
+
+/* Counselling Section */
+.counselling-services h3 { margin: 0 0 15px 0; color: #333; }
+.search-bar {
+    width: 100%; padding: 10px; border: 1px solid #eee;
+    border-radius: 8px; margin-bottom: 15px; box-sizing: border-box;
+}
+.counselor-list { overflow-y: auto; flex: 1; }
+.counselor-card {
+    display: flex; justify-content: space-between;
+    padding: 15px; border: 1px solid #eee;
+    border-radius: 12px; margin-bottom: 10px;
+}
+.counselor-card h4 { margin: 0 0 5px 0; color: #333; font-size: 15px; }
+.counselor-card p { margin: 0; color: #777; font-size: 12px; }
+.booking-action { text-align: right; display: flex; flex-direction: column; align-items: flex-end; }
+.price { font-weight: bold; color: #333; margin-bottom: 5px; }
+.book-btn {
+    background-color: #4a90e2; color: white;
+    border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer;
+}
+
+/* Right Content Area Styles */
+.main-content {
+    flex: 1;
+    background-color: #f8faff;
+    padding: 30px;
+    overflow-y: hidden; /* Main content does NOT scroll, its children do */
+    display: flex; 
+    flex-direction: column;
+}
+
+/* Dynamic Content specific styles */
+.content-header { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; }
+.content-icon { font-size: 32px; }
+.content-header h2 { margin: 0; font-size: 22px; color: #333; }
+.content-header p { margin: 5px 0 0; color: #666; }
+
+/* Chatbot Styles (CORRECTED: RESTORING INTERNAL SCROLL) */
+#dynamic-content {
+    display: flex;
+    flex-direction: column;
+    /* The dynamic content area must take up remaining space */
+    height: 100%; 
+}
+.chat-box { 
+    flex: 1; /* Allows the chat-box to expand and push the input field down */
+    overflow-y: auto; /* CRITICAL: Enables scrolling within the chat area */
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+.message { max-width: 70%; padding: 15px; border-radius: 15px; position: relative; }
+.message.bot { background-color: #fff; color: #333; align-self: flex-start; border-bottom-left-radius: 2px; }
+.message.user { background-color: #4a90e2; color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+.timestamp {
+    display: block; font-size: 11px; margin-top: 8px;
+    color: #999; text-align: right;
+}
+.message.user .timestamp { color: #e0e0e0; }
+
+/* Styling for the typing indicator */
+.typing-indicator {
+    background-color: #eef6fc; 
+    color: #4a90e2; 
+    font-style: italic;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* Music Player Styles */
+.music-player-container { background: white; padding: 25px; border-radius: 15px; text-align: center; }
+.audio-controls { margin-top: 20px; }
+.play-btn { background: #4a90e2; color: white; border: none; padding: 10px 25px; border-radius: 25px; cursor: pointer; font-size: 16px; }
+
+/* Task Styles */
+.task-container { background: white; padding: 30px; border-radius: 15px; text-align: center; }
+.task-display { font-size: 20px; color: #4a90e2; margin: 25px 0; font-weight: 500; }
+
+/* Contact List Styles */
+.contact-list { list-style: none; padding: 0; }
+.contact-item { background: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+.call-btn { text-decoration: none; color: #4a90e2; font-weight: 500; }
+.add-contact-form { margin-top: 25px; display: flex; gap: 10px; }
+.add-contact-form input { padding: 10px; border: 1px solid #ddd; border-radius: 8px; flex: 1; }
+
+/* Language Selector (Header Control) Styling */
+.lang-select {
+    /* Style consistency */
+    background-color: #f8faff; 
+    color: #333;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    
+    /* Optional: Remove default browser styling for a cleaner look */
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
+    /* Add a custom dropdown arrow icon */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2210%22%20height%3D%2210%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2%203l3%203%203-3z%22%20fill%3D%22%23333333%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 25px; /* Adjust padding for the icon */
+}
+
+/* Styling for options within the dropdown */
+.lang-select option {
+    background-color: #fff;
+    color: #333;
+}
